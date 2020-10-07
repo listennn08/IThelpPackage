@@ -42,14 +42,14 @@
         },
         {
             class: ['.hljs-number', '.hljs-built_in', '.hljs-builtin-name', '.hljs-literal',
-                    '.hljs-type', '.hljs-params', '.hljs-meta', '.hljs-link '],
+                    '.hljs-type', '.hljs-params', '.hljs-meta', '.hljs-link'],
             color: '#e78c45',
         },
     ];
     classList.forEach((item) => {
         item.class.forEach((c) => {
             document.querySelectorAll(`pre ${c}`).forEach((ele) => {
-                ele.style.color = item.color
+                ele.style.color = item.color;
             });
         });
     });
