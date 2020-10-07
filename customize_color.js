@@ -53,7 +53,7 @@
     ];
     classList.forEach((item) => {
         item.class.forEach((c) => {
-            document.querySelectorAll(`pre ${c}`).forEach((ele) => {
+            document.querySelectorAll(c).forEach((ele) => {
                 const keys = Object.keys(item).filter((key) => key !== 'class');
                 keys.forEach((key) => {
                     ele.style[key] = item[key];
