@@ -7,8 +7,16 @@
 // @match        https://ithelp.ithome.com.tw/*
 // @grant        none
 // ==/UserScript==
+const previewOriginFn = document.querySelector('a[title="預覽 (Ctrl-P)"]').onclick;
+document.querySelector('a[title="預覽 (Ctrl-P)"]').onclick = () => {
+    previewOriginFn();
+    initCustomerColor();
+}
 (function() {
     'use strict';
+    initCustomerColor();
+})();
+function initCustomerColor () {
     if (!localStorage.getItem('itHelp_css')) {
         localStorage.setItem('itHelp_css', prompt('請輸入想使用的程式碼區塊主題!'));
     }
@@ -20,8 +28,7 @@
         success: setStyle,
         dataType: 'text'
     });
-})();
-
+}
 function setStyle(resp) {
     const regList = [
         /(?<class>.hljs-comment,\n.hljs-quote) {\s+color: (?<color>#\w+);\n}/,
