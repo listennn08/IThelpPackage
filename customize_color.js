@@ -57,7 +57,7 @@
                 const keys = Object.keys(item).filter((key) => key !== 'class');
                 keys.forEach((key) => {
                     ele.style[key] = item[key];
-                };
+                });
             });
         });
     });
