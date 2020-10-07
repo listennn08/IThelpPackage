@@ -53,8 +53,8 @@ function setStyle(resp) {
             });
         });
     });
-     const background =  classList[classList.findIndex((el) => el.class = '.hljs')].background;
-    ['.markdown__style pre', '.editor-preview pre'].forEach((c) => 
+    const { background } = classList[classList.findIndex((el) => el.class[0] === '.hljs')];
+    ['.markdown__style pre', '.editor-preview pre'].forEach((c) => {
         document.querySelectorAll(c).forEach((ele) => {
             if (background) {
                 ele.style.background = background;
