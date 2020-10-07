@@ -7,14 +7,15 @@
 // @match        https://ithelp.ithome.com.tw/*
 // @grant        none
 // ==/UserScript==
-const previewOriginFn = document.querySelector('a[title="預覽 (Ctrl-P)"]').onclick;
-document.querySelector('a[title="預覽 (Ctrl-P)"]').onclick = () => {
-    previewOriginFn();
-    initCustomerColor();
-}
+
 (function() {
     'use strict';
     initCustomerColor();
+    const previewOriginFn = document.querySelector('a[title="預覽 (Ctrl-P)"]').onclick;
+    document.querySelector('a[title="預覽 (Ctrl-P)"]').onclick = () => {
+        previewOriginFn();
+        initCustomerColor();
+    }
 })();
 function initCustomerColor () {
     if (!localStorage.getItem('itHelp_css')) {
