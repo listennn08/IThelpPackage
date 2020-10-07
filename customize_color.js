@@ -14,6 +14,7 @@
         {
             class: ['.hljs'],
             color: '#eaeaea',
+            background: 'black';
         },
         {
             class: ['.hljs-keyword', '.hljs-selector-tag'],
@@ -45,11 +46,18 @@
                     '.hljs-type', '.hljs-params', '.hljs-meta', '.hljs-link'],
             color: '#e78c45',
         },
+        {
+            class: ['.markdown__style pre', '.editor-preview pre'],
+            background: 'black';
+        },
     ];
     classList.forEach((item) => {
         item.class.forEach((c) => {
             document.querySelectorAll(`pre ${c}`).forEach((ele) => {
-                ele.style.color = item.color;
+                const keys = Object.keys(item).filter((key) => key !== 'class');
+                keys.forEach((key) => {
+                    ele.style[key] = item[key];
+                };
             });
         });
     });
