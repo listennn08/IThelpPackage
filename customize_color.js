@@ -14,7 +14,7 @@
         {
             class: ['.hljs'],
             color: '#eaeaea',
-            background: 'black';
+            background: 'black',
         },
         {
             class: ['.hljs-keyword', '.hljs-selector-tag'],
@@ -48,7 +48,7 @@
         },
         {
             class: ['.markdown__style pre', '.editor-preview pre'],
-            background: 'black';
+            background: 'black',
         },
     ];
     classList.forEach((item) => {
