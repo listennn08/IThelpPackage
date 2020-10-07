@@ -17,7 +17,7 @@
         },
         {
             class: ['.hljs-keyword', '.hljs-selector-tag'],
-            color: ' #c397d8',
+            color: '#c397d8',
         },
         {
             class: ['.hljs-title', '.hljs-section'],
